@@ -1,59 +1,83 @@
-# Link-Block
+# Link Block
 
-**Ein flexibler Gutenberg-Block für aufklappbare Inhalte mit PDF- und Link-Funktionalität.**  
-Mit diesem Plugin lassen sich strukturierte Linklisten mit internen, externen oder PDF-Links elegant im Editor erstellen – ganz ohne Programmierkenntnisse.
-
-
-
-## Funktionen
-
-- Block für aufklappbare Inhalte (Details/Dropdown)
-- Drag & Drop-Sortierung der Listeneinträge per `@dnd-kit`
-- Unterstützung für:
-  - Interne Seiten
-  - Externe Links
-  - PDF-Dateien (inkl. Upload-Funktion)
-- Automatische Icons je nach Linktyp (PDF, extern)
-- Benutzerfreundliche Eingabemaske über Gutenberg UI
-- DOM-Bereinigung im Frontend:
-  - Leere Inhalte und ungenutzte Einträge werden komplett aus dem DOM entfernt
-  - Block bleibt nur sichtbar, wenn relevante Inhalte vorhanden sind
-
-
-
-## Vorschau im Editor
-
-![Details Dropdown Editor](./assets/details_dropdown_editor.png)
-*Abbildung: Der Block im Editor mit bearbeitbaren Feldern für Linktitel, Linktyp und Reihenfolge.*
-
-![Details Dropdown Editor](./assets/details_context.png)
-*Abbildung: Je nach Kontext werden diverse Optionen angezeigt.*
+Ein modularer Block zur Darstellung einzelner Links mit automatischer Icon-Erkennung (z. B. PDF, extern, ZIP, Video).
+Der Block wird einzeln oder innerhalb anderer Container-Blöcke – etwa `ud/tagged-links-block` – verwendet, um strukturierte Linklisten aufzubauen.
 
 ---
 
-## Darstellung im Frontend
+## Funktionen
 
-![Details Dropdown Frontend](./assets/details_dropdown_frontend.png)
-*Abbildung: Die ausgeklappte Liste im Frontend – inklusive Icons für PDFs und externe Links.*
+- Unterstützt verschiedene Linktypen:
+  - Interne Seiten (über Seitenauswahl)
+  - Externe Links
+  - PDF- und andere Mediendateien (über Medienauswahl)
+  - ZIP- und MP4-Dateien mit passender Icon-Erkennung
+- Automatische Icon-Zuweisung je nach Dateityp:
+  - 🔗 interne Links
+  - 🌐 externe Links
+  - 🎥 Video / MP4
+  - 📄 PDF
+  - 🗜️ ZIP
+- Öffnet externe Links und Mediendateien automatisch in einem neuen Tab, interne Links bleiben im selben Tab
+- Integration von Schlagwörtern (`data-tags` & `data-tags-slug`)
+- Kompatibel mit Full Site Editing (FSE)
+- Unterstützt Kombination mit Container-Blöcken wie `ud-tagged-links-block`
 
+---
 
-## Besonderheiten
+## Editor-Ansicht
 
-- Kompakte, übersichtliche Darstellung durch Aufklappmechanismus
-- Ideal für Download-Bereiche
-- Dynamisches Verhalten im Frontend: Animationen, Sichtbarkeitsprüfung, DOM-Optimierung
+![Editor-Ansicht](./assets/details_context.png)
+*Abbildung: Der Block im Gutenberg-Editor mit Eingabefeldern für Titel, Link und Tags. Optionen werden kontextabhängig eingeblendet.*
 
+---
 
+## Frontend-Ansicht
 
-## Technische Hinweise
+![Frontend-Ansicht](./assets/ud-link-block.png)
+*Abbildung: Darstellung des Link-Blocks mit automatischem Icon.*
 
-* Entwickelt mit [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
-* Modularer Aufbau mit getrennten Dateien für `edit.js`, `save.js`, Utility-Komponenten und Styles
-* JavaScript-Logik im Frontend entfernt ungenutzte Inhalte zur Laufzeit (statt nur Ausblenden)
+---
 
+## Technische Details
 
+- Entwickelt mit [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
+- Modularer Aufbau mit getrennten Dateien für:
+  - `edit.js` – Editor-Komponente und Medienauswahl
+  - `save.js` – Rendering-Logik für Gutenberg
+  - `render.php` – serverseitige Ausgabe (für dynamische Nutzung)
+  - `helpers.php` – Hilfsfunktionen für Typ- und Icon-Erkennung
+- Automatische Erkennung des Dateityps über MIME oder Dateiendung
+- Zukunftssichere Props für WordPress 7.0+:
+  - `__next40pxDefaultSize={true}`
+  - `__nextHasNoMarginBottom={true}`
+
+---
 
 ## Installation
 
-1. Plugin in den Ordner `wp-content/plugins/` kopieren
-2. Im WordPress-Backend aktivieren
+1. Plugin-Ordner `ud-link-block` in `wp-content/plugins/` kopieren
+2. Im WordPress-Backend unter **Plugins → Installierte Plugins** aktivieren
+3. Im Block-Editor den Block **„UD Link“** auswählen und konfigurieren
+
+---
+
+## Anforderungen
+
+- WordPress ≥ 6.7
+- PHP ≥ 7.4
+- Aktiver Block-Editor (Gutenberg oder FSE-kompatibles Theme)
+
+---
+
+## Autor
+
+**ulrich.digital gmbh**
+[https://ulrich.digital](https://ulrich.digital)
+
+---
+
+## Lizenz
+
+GPL v2 or later
+[https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
