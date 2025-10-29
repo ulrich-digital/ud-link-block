@@ -1,0 +1,87 @@
+/* =============================================================== *\
+   Basis-Stil für Link-Block
+\* =============================================================== */
+.ud-link-block {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 1rem 1.25rem;
+	text-decoration: none;
+	transition: all 0.2s;
+
+
+	&:hover {
+		//background: #e9f6f1;
+		text-decoration: none;
+	}
+
+	&__content {
+		flex: 1;
+	}
+
+	&__title {
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	&__tags {
+		display: none;
+	}
+
+	&__description {
+		font-size: 0.95rem;
+		color: inherit;
+	}
+
+	&__link-icon {
+		width: 24px;
+		height: 24px;
+		margin-top: 2px;
+		flex-shrink: 0;
+	}
+}
+
+
+/* =============================================================== *\
+   Verhalten bei Accordion
+\* =============================================================== */
+.wp-block-ud-accordion-block {
+
+
+	.wp-block-ud-link-block {
+		display: block;
+
+		a {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+
+	&.is-style-chips {
+		.ud-accordion__content-inner {
+			flex-direction: row;
+		}
+
+		.wp-block-ud-link-block {
+			display: inline-block;
+
+			a {
+				justify-content: center;
+			}
+		}
+	}
+}
+
+/* =============================================================== *\
+   Verhalten bei .wp-block-ud-datetime-loop-container (Termine)
+\* =============================================================== */
+
+.wp-block-ud-datetime-loop-container {
+	.wp-block-ud-link-block {
+		margin-left: auto;
+	}
+}
+
+

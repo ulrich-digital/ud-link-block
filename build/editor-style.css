@@ -1,0 +1,335 @@
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/editor.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* =============================================================== *\
+   Custom Link Block – Styles für Gutenberg Block
+   Struktur:
+    • Layout Container
+    • Komponenten
+    • Utility
+\* =============================================================== */
+/* =============================================================== *\
+   Hauptblock Container
+\* =============================================================== */
+.ud-link-block {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--wp--preset--color--ui-neutral-500);
+  border-radius: 16px;
+  padding: 12px;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* =============================================================== *\
+     Ziel/Vorschau
+  \* =============================================================== */
+  /* =============================================================== *\
+     Zielbearbeitung (LinkControl oder Medium)
+  \* =============================================================== */
+  /* =============================================================== *\
+     Block-Actions rechts außen (Icon)
+  \* =============================================================== */
+}
+.ud-link-block__fields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.75rem;
+}
+.ud-link-block__row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1.44rem;
+}
+@media (max-width: 800px) {
+  .ud-link-block__row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.ud-link-block__row--options-toggle {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+}
+.ud-link-block__row--options-toggle button {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 6px 8px;
+}
+.ud-link-block .ud-link-block__field.ud-link-block__field--target {
+  flex-grow: 2;
+}
+.ud-link-block__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ud-link-block__field--anzeigetext {
+  min-width: 200px;
+}
+.ud-link-block__field--anzeigetext .components-text-control__input {
+  border: 0;
+  background-color: var(--wp--preset--color--ui-neutral-300);
+  font-weight: 700;
+  border-radius: 4px;
+  height: 30px;
+}
+.ud-link-block__label {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 11px;
+  fill: var(--wp--preset--color--ui-neutral-600);
+  color: var(--wp--preset--color--ui-neutral-600);
+  margin-bottom: 0.25rem;
+}
+.ud-link-block__label .ud-link-block__icon {
+  width: 20px;
+  height: 20px;
+}
+.ud-link-block__icon {
+  vertical-align: middle;
+}
+.ud-link-block__target-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  height: 20px;
+  padding: 6px 8px;
+  background-color: var(--wp--preset--color--ui-neutral-300);
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+.ud-link-block__target-preview-filename-wrapper {
+  margin: 0;
+  padding: 0;
+  line-height: 1rem;
+  flex-grow: 2;
+}
+.ud-link-block__target-filename {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 320px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: var(--wp--preset--color--ui-neutral-600);
+}
+.ud-link-block__target-icon {
+  width: 24px;
+  height: 24px;
+  background: #eee;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 24px;
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.ud-link-block__target-icon--pdf {
+  background: transparent;
+  margin-right: 6px;
+}
+.ud-link-block__target-edit-btn {
+  padding: 0 6px;
+}
+.ud-link-block__target-edit-finish-btn {
+  align-self: flex-end;
+  margin-top: 6px;
+}
+.ud-link-block__media-btn {
+  margin-right: 8px;
+}
+.ud-link-block__target-edit-area {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--wp--preset--color--ui-neutral-300);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ud-link-block__target-toggle {
+  margin-top: -8px;
+  margin-bottom: 6px;
+}
+.ud-link-block__target-control {
+  margin-bottom: 8px;
+}
+.ud-link-block__target-control .block-editor-link-control__search-item-top button[aria-label="Copy link"] {
+  display: none;
+}
+.ud-link-block__target-control.mode-media {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0 6px;
+  color: var(--wp--preset--color--ui-neutral-500);
+  margin: 0;
+}
+.ud-link-block__target-control.mode-media .ud-link-block__selected-target {
+  flex-grow: 1;
+}
+.ud-link-block__target-control.mode-link {
+  margin: 0;
+}
+.ud-link-block__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ud-link-block__actions-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  height: 28px;
+}
+.ud-link-block__link-icon {
+  margin: auto 0;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  fill: var(--wp--preset--color--ui-neutral-500);
+}
+.ud-link-block__link-icon.swatch {
+  fill: var(--wp--preset--color--ui-neutral-300);
+}
+
+/* =============================================================== *\
+   Editor Panels / Inspector Styles
+\* =============================================================== */
+.block-editor-block-inspector label.components-base-control__label {
+  margin-right: 10px;
+}
+
+.ud-link-block .components-base-control__field {
+  margin-bottom: 0;
+}
+
+/* =============================================================== *\
+   Responsive & Utility
+\* =============================================================== */
+@media (max-width: 480px) {
+  .ud-link-block__actions-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ud-link-block__target-filename {
+    max-width: 98vw;
+  }
+}
+/* =============================================================== *\
+   Gutenberg LinkControl Overrides (versteckte Elemente)
+\* =============================================================== */
+.block-editor-link-control__search-actions,
+.block-editor-link-control__search-item-icon,
+.components-external-link,
+.components-link-control__footer,
+.block-editor-link-control__tools {
+  display: none;
+}
+
+/* =============================================================== *\
+   Zeile: Haupt-Zieleingabe
+\* =============================================================== */
+.ud-link-block__row--primary .ud-link-block__target-edit-area .components-toggle-group-control::before {
+  background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .components-toggle-group-control.ud-link-block__target-toggle {
+  max-width: 320px;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .components-toggle-group-control.ud-link-block__target-toggle button[aria-checked=true] {
+  background-color: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__selected-target {
+  font-size: 12px;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-item.is-preview {
+  background: white;
+  border-radius: 4px;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-item.is-preview .block-editor-link-control__search-item-icon {
+  display: none;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-input-wrapper {
+  margin-bottom: 0;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-url-input.block-editor-link-control__field.block-editor-link-control__search-input {
+  margin: 0;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-url-input.block-editor-link-control__field.block-editor-link-control__search-input .components-input-control__container {
+  border-radius: 4px;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-url-input.block-editor-link-control__field.block-editor-link-control__search-input input {
+  height: 32px;
+  min-height: unset;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-url-input.block-editor-link-control__field.block-editor-link-control__search-input .components-input-control__backdrop {
+  border-color: transparent;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-actions {
+  padding: 0;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-results-wrapper {
+  margin-top: 0rem;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .block-editor-link-control__search-results {
+  padding: 0;
+  margin: 0;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .components-button.components-menu-item__button.block-editor-link-control__search-item {
+  padding: 4px;
+  margin: 4px 0;
+  background: white;
+  border-radius: 4px;
+}
+.ud-link-block__row--primary .ud-link-block__target-edit-area .ud-link-block__target-control .components-menu-item__shortcut {
+  text-transform: lowercase;
+}
+
+/* =============================================================== *\
+   Zeile: Optionen (unterhalb)
+    - Beschreibung
+    - Tags
+\* =============================================================== */
+.ud-link-block__row--meta .ud-link-block__field--description {
+  flex-basis: 50%;
+}
+.ud-link-block__row--meta .ud-link-block__field--description .components-text-control__input {
+  border: 0;
+  background-color: var(--wp--preset--color--ui-neutral-300);
+  border-radius: 4px;
+}
+.ud-link-block__row--meta .ud-link-block__field--tags {
+  flex-basis: 50%;
+}
+.ud-link-block__row--meta .ud-link-block__field--tags .components-form-token-field label {
+  display: none;
+}
+.ud-link-block__row--meta .ud-link-block__field--tags .components-form-token-field .components-form-token-field__input-container {
+  border: 0;
+}
+.ud-link-block__row--meta .ud-link-block__field--tags .components-form-token-field .components-form-token-field__input-container .components-flex {
+  background: var(--wp--preset--color--ui-neutral-300);
+  border-radius: 4px;
+  padding: 3px 4px;
+}
+
+/*# sourceMappingURL=editor-style.css.map*/

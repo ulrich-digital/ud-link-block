@@ -1,0 +1,34 @@
+{
+    "apiVersion": 2,
+    "name": "ud/link-block",
+    "title": "Link",
+    "category": "text",
+    "icon": "admin-links",
+    "description": "Ein Block zur Darstellung von PDF-, internen und externen Links. Jeder Link kann mit einem oder mehreren Tags versehen werden. Ideal zur strukturierten Darstellung von Informationen.",
+    "editorStyle": "file:./build/editor-style.css",
+    "style": "file:./build/frontend-style.css",
+    "editorScript": "file:./build/editor-script.js",
+    "script": "file:./build/frontend-script.js",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "mode": {
+            "type": "string",
+            "default": "link"
+        },
+        "item": {
+            "type": "object",
+            "default": {
+                "url": "",
+                "attachmentLink": "",
+                "title": "",
+                "tags": [],
+                "opensInNewTab": false,
+                "isExternal": false,
+                "isPdf": false,
+                "isVideoPlatform": false
+            }
+        }
+    }
+}

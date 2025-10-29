@@ -1,0 +1,403 @@
+/* =============================================================== *\
+   Custom Link Block – Styles für Gutenberg Block
+   Struktur:
+    • Layout Container
+    • Komponenten
+    • Utility
+\* =============================================================== */
+
+/* =============================================================== *\
+   Hauptblock Container
+\* =============================================================== */
+.ud-link-block {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 100%;
+	background: #fff;
+	border: 1px solid var(--wp--preset--color--ui-neutral-500);
+	border-radius: 16px;
+	padding: 12px;
+	margin: 0.5rem 0;
+	box-sizing: border-box;
+
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+	// ===== Felder-Gruppe =====
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 0.75rem;
+	}
+
+	// ===== Zeile allgemein =====
+	&__row {
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+		gap: 1.44rem;
+
+		@media (max-width: 800px) {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		&--options-toggle {
+			display: flex;
+			justify-content: flex-start;
+			gap: 0;
+
+			button {
+				display: flex;
+				flex-direction: row-reverse;
+				padding: 6px 8px;
+			}
+		}
+	}
+
+	// Ziel-Feld größer bei Bedarf
+	.ud-link-block__field.ud-link-block__field--target {
+		flex-grow: 2;
+	}
+
+	// Einzelfelder
+	&__field {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	&__field--anzeigetext {
+		min-width: 200px;
+
+		.components-text-control__input {
+			border: 0;
+			background-color: var(--wp--preset--color--ui-neutral-300);
+			font-weight: 700;
+			border-radius: 4px;
+			height: 30px;
+		}
+	}
+
+	&__label {
+		display: flex;
+		align-items: center;
+		gap: 0.4em;
+		text-transform: uppercase;
+		font-weight: 500;
+		font-size: 11px;
+		fill: var(--wp--preset--color--ui-neutral-600);
+		color: var(--wp--preset--color--ui-neutral-600);
+		margin-bottom: 0.25rem;
+
+		.ud-link-block__icon {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__icon {
+		vertical-align: middle;
+	}
+
+    /* =============================================================== *\
+       Ziel/Vorschau
+    \* =============================================================== */
+	&__target-preview {
+		display: flex;
+		align-items: center;
+        justify-content: space-between;
+		gap: 0.4rem;
+		height: 20px;
+		padding: 6px 8px;
+		background-color: var(--wp--preset--color--ui-neutral-300);
+		border-radius: 4px;
+		margin-bottom: 0;
+
+		&-filename-wrapper {
+			margin: 0;
+			padding: 0;
+			line-height: 1rem;
+			flex-grow: 2;
+		}
+	}
+
+	&__target-filename {
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		max-width: 320px;
+		vertical-align: middle;
+		font-size: 14px;
+		color: var(--wp--preset--color--ui-neutral-600);
+	}
+
+	&__target-icon {
+		width: 24px;
+		height: 24px;
+		background: #eee;
+		border-radius: 4px;
+		text-align: center;
+		line-height: 24px;
+		margin-right: 4px;
+		font-weight: bold;
+		font-size: 13px;
+
+		&--pdf {
+			background: transparent;
+			margin-right: 6px;
+		}
+	}
+
+	&__target-edit-btn {
+		padding: 0 6px;
+	}
+
+	&__target-edit-finish-btn {
+		align-self: flex-end;
+		margin-top: 6px;
+	}
+
+	&__media-btn {
+		margin-right: 8px;
+	}
+
+    /* =============================================================== *\
+       Zielbearbeitung (LinkControl oder Medium)
+    \* =============================================================== */
+	&__target-edit-area {
+		margin-top: 0.5rem;
+		padding: 0.5rem;
+		background-color: var(--wp--preset--color--ui-neutral-300);
+		border-radius: 4px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__target-toggle {
+		margin-top: -8px;
+		margin-bottom: 6px;
+	}
+
+	&__target-control {
+		margin-bottom: 8px;
+
+		.block-editor-link-control__search-item-top button[aria-label="Copy link"] {
+			display: none;
+		}
+
+		&.mode-media {
+			display: flex;
+			align-items: center;
+			background-color: #fff;
+			border-radius: 4px;
+			padding: 0 6px;
+			color: var(--wp--preset--color--ui-neutral-500);
+			margin: 0;
+
+			.ud-link-block__selected-target {
+				flex-grow: 1;
+			}
+		}
+
+		&.mode-link {
+			margin: 0;
+		}
+	}
+
+    /* =============================================================== *\
+       Block-Actions rechts außen (Icon)
+    \* =============================================================== */
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	&__actions-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-between;
+		position: relative;
+		height: 28px;
+	}
+
+	&__link-icon {
+		margin: auto 0;
+		width: 1rem;
+		aspect-ratio: 1 / 1;
+		fill: var(--wp--preset--color--ui-neutral-500);
+
+		&.swatch {
+			fill: var(--wp--preset--color--ui-neutral-300);
+		}
+	}
+}
+
+
+/* =============================================================== *\
+   Editor Panels / Inspector Styles
+\* =============================================================== */
+.block-editor-block-inspector {
+	label.components-base-control__label {
+		margin-right: 10px;
+	}
+}
+
+.ud-link-block .components-base-control__field {
+	margin-bottom: 0;
+}
+
+
+/* =============================================================== *\
+   Responsive & Utility
+\* =============================================================== */
+@media (max-width: 480px) {
+	.ud-link-block__actions-inner {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.ud-link-block__target-filename {
+		max-width: 98vw;
+	}
+}
+
+/* =============================================================== *\
+   Gutenberg LinkControl Overrides (versteckte Elemente)
+\* =============================================================== */
+.block-editor-link-control__search-actions,
+.block-editor-link-control__search-item-icon,
+.components-external-link,
+.components-link-control__footer,
+.block-editor-link-control__tools {
+	display: none;
+}
+
+/* =============================================================== *\
+   Zeile: Haupt-Zieleingabe
+\* =============================================================== */
+.ud-link-block__row--primary {
+
+	.ud-link-block__target-edit-area {
+.components-toggle-group-control::before{
+				background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+
+}
+		.components-toggle-group-control.ud-link-block__target-toggle {
+			max-width: 320px;
+
+			button[aria-checked="true"] {
+				background-color: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+			}
+		}
+
+		.ud-link-block__selected-target {
+			font-size: 12px;
+		}
+
+		.ud-link-block__target-control {
+			.block-editor-link-control__search-item.is-preview {
+				background: white;
+				border-radius: 4px;
+				padding: 0 6px;
+				box-sizing: border-box;
+
+				.block-editor-link-control__search-item-icon {
+					display: none;
+				}
+			}
+
+			.block-editor-link-control__search-input-wrapper {
+				margin-bottom: 0;
+			}
+
+			.block-editor-url-input.block-editor-link-control__field.block-editor-link-control__search-input {
+				margin: 0;
+
+				.components-input-control__container {
+					border-radius: 4px;
+				}
+
+				input {
+					height: 32px;
+					min-height: unset;
+					padding: 6px 8px;
+					font-size: 12px;
+				}
+
+				.components-input-control__backdrop {
+					border-color: transparent;
+				}
+			}
+
+			.block-editor-link-control__search-actions {
+				padding: 0;
+			}
+
+			.block-editor-link-control__search-results-wrapper {
+				margin-top: 0rem;
+			}
+
+			.block-editor-link-control__search-results {
+				padding: 0;
+				margin: 0;
+			}
+
+			.components-button.components-menu-item__button.block-editor-link-control__search-item {
+				padding: 4px;
+				margin: 4px 0;
+				background: white;
+				border-radius: 4px;
+			}
+
+			.components-menu-item__shortcut {
+				text-transform: lowercase;
+			}
+		}
+	}
+}
+
+
+/* =============================================================== *\
+   Zeile: Optionen (unterhalb)
+    - Beschreibung
+    - Tags
+\* =============================================================== */
+
+.ud-link-block__row--meta {
+
+	.ud-link-block__field--description {
+		flex-basis: 50%;
+
+		.components-text-control__input {
+			border: 0;
+			background-color: var(--wp--preset--color--ui-neutral-300);
+			border-radius: 4px;
+		}
+	}
+
+	.ud-link-block__field--tags {
+		flex-basis: 50%;
+
+		.components-form-token-field {
+			label {
+				display: none;
+			}
+			.components-form-token-field__input-container {
+				border: 0;
+
+				.components-flex {
+					background: var(--wp--preset--color--ui-neutral-300);
+					border-radius: 4px;
+					padding: 3px 4px;
+				}
+			}
+		}
+	}
+}
