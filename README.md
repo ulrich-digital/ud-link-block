@@ -24,15 +24,16 @@ Mit diesem Plugin lassen sich strukturierte Linklisten mit internen, externen od
 ## Vorschau im Editor
 
 ![Details Dropdown Editor](./assets/details_dropdown_editor.png)
-
 *Abbildung: Der Block im Editor mit bearbeitbaren Feldern für Linktitel, Linktyp und Reihenfolge.*
+
+![Details Dropdown Editor](./assets/details_context.png)
+*Abbildung: Je nach Kontext werden diverse Optionen angezeigt.*
 
 ---
 
 ## Darstellung im Frontend
 
 ![Details Dropdown Frontend](./assets/details_dropdown_frontend.png)
-
 *Abbildung: Die ausgeklappte Liste im Frontend – inklusive Icons für PDFs und externe Links.*
 
 
