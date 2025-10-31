@@ -5,18 +5,11 @@ Der Block wird einzeln oder innerhalb anderer Container-Blöcke – etwa `ud/tag
 
 
 ## Funktionen
-
-- Unterstützt verschiedene Linktypen:
+- Unterstützt verschiedene Linktypen mit automatischer Icon-Erkennung:
   - Interne Seiten (über Seitenauswahl)
   - Externe Links
   - PDF- und andere Mediendateien (über Medienauswahl)
-  - ZIP- und MP4-Dateien mit passender Icon-Erkennung
-- Automatische Icon-Zuweisung je nach Dateityp:
-  - interne Links
-  - externe Links
-  - Video / MP4
-  - PDF
-  - ZIP
+  - ZIP- und MP4-Dateien 
 - Öffnet externe Links und Mediendateien automatisch in einem neuen Tab, interne Links bleiben im selben Tab
 - Integration von Schlagwörtern (`data-tags` & `data-tags-slug`)
 - Kompatibel mit Full Site Editing (FSE)
@@ -29,20 +22,6 @@ Der Block wird einzeln oder innerhalb anderer Container-Blöcke – etwa `ud/tag
 
 ![Editor-Ansicht](./assets/details_context.png)
 *Der Block im Gutenberg-Editor mit Eingabefeldern für Titel, Link und Tags. Optionen werden kontextabhängig eingeblendet.*
-
-
-## Technische Details
-
-- Entwickelt mit [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
-- Modularer Aufbau mit getrennten Dateien für:
-  - `edit.js` – Editor-Komponente und Medienauswahl
-  - `save.js` – Rendering-Logik für Gutenberg
-  - `render.php` – serverseitige Ausgabe (für dynamische Nutzung)
-  - `helpers.php` – Hilfsfunktionen für Typ- und Icon-Erkennung
-- Automatische Erkennung des Dateityps über MIME oder Dateiendung
-- Zukunftssichere Props für WordPress 7.0+:
-  - `__next40pxDefaultSize={true}`
-  - `__nextHasNoMarginBottom={true}`
 
 
 
