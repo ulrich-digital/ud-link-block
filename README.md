@@ -1,6 +1,8 @@
 # UD Block: Link
 
 Ein Block zur Darstellung einzelner Links mit automatischer Icon-Erkennung (z. B. PDF, extern, ZIP, Video).
+Der Block passt seine verfügbaren Optionen im Editor automatisch an den Kontext an.
+
 
 
 ## Funktionen
@@ -10,7 +12,9 @@ Ein Block zur Darstellung einzelner Links mit automatischer Icon-Erkennung (z. B
   - PDF- und andere Mediendateien (über Medienauswahl)
   - ZIP- und MP4-Dateien
 - Öffnet externe Links und Mediendateien automatisch in einem neuen Tab, interne Links bleiben im selben Tab
-- Integration von Schlagwörtern (`data-tags` & `data-tags-slug`)
+- Zeigt im Editor kontextabhängig zusätzliche Optionen:  
+  - Innerhalb eines `ud-link-filter-container-block` können **Beschreibung** und **Tags** über einen Options-Button eingeblendet werden  
+  - Ausserhalb dieses Containers bleiben nur **Anzeigetext** und **Ziel** sichtbar  
 - Kompatibel mit Full Site Editing (FSE)
 - Unterstützt Kombination mit Container-Blöcken wie `ud-tagged-links-block`
 
